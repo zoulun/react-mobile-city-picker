@@ -10,14 +10,6 @@ module.exports = merge(index, {
     path: path.resolve(__dirname, '../dist'),
     filename: '[name].js'
   },
-  module: {
-    rules: [
-      {
-        test: /\.l?[ec]ss$/,
-        use: ['style-loader', 'css-loader', 'less-loader']
-      }
-    ]
-  },
   devtool: {
     port: 9999,
     open: true,
