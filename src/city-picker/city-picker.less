@@ -3,6 +3,7 @@
   width: 100%;
   top: 0;
   bottom: 0;
+  overflow: hidden;
   font-size: 14px;
   box-sizing: border-box;
   .header {
@@ -19,6 +20,7 @@
     }
   }
   .city {
+    position: relative;
     display: flex;
     height: 100%;
     .left-city-wrapper {
@@ -53,6 +55,8 @@
       overflow-y: auto;
       position: absolute;
       right: 0;
+      top: 0;
+      bottom: 100px;
       .letter-scope-item {
         width: 30px;
         text-align: center;
