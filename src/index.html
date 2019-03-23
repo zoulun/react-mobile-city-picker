@@ -8,6 +8,22 @@
   <title>
     <%= htmlWebpackPlugin.options.title %>
   </title>
+  <script>
+    (function (w, d) {
+      var docE = d.documentElement;
+      var resizeE = 'orientationchange' in w ? 'orientationchange' : 'resize';
+      var fn = function () {
+        var clientW = docE.clientWidth;
+        if (clientW) {
+          docE.style.fontSize = 100 * (clientW / 750) + 'px';
+        }
+      };
+      if (d.addEventListener) {
+        w.addEventListener(resizeE, fn, false);
+        d.addEventListener('DOMContentLoaded', fn, false);
+      }
+    })(window, document);
+  </script>
 </head>
 
 <body>

@@ -16,7 +16,7 @@ module.exports = merge(index, {
     rules: [
       {
         test: /\.l?[ec]ss$/,
-        use: ['style-loader', 'css-loader', 'less-loader']
+        use: ['css-loader', 'less-loader']
       }
     ]
   },
