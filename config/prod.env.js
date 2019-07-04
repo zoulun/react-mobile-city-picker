@@ -6,7 +6,7 @@ const index = require('./index.js');
 
 module.exports = merge(index, {
   mode: 'production',
-  entry: '../src/index.js',
+  entry: path.resolve(__dirname, '../src/index.js'),
   output: {
     path: path.resolve(__dirname, '../dist'),
     filename: 'js/[name].[hash:8].js',
@@ -21,10 +21,10 @@ module.exports = merge(index, {
     ]
   },
   plugins: [
-    new CleanWebpackPlugin(['./dist']),
-    new HtmlWebpackPlugin({
-      title: 'react-mobile-city-picker',
-      template: '../src/index.html',
-    })
+    new CleanWebpackPlugin(),
+    // new HtmlWebpackPlugin({
+    //   title: 'react-mobile-city-picker',
+    //   template: path.resolve(__dirname, '../src/index.html'),
+    // })
   ]
 });
