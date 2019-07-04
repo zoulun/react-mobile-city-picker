@@ -22,6 +22,7 @@ class CityPicker extends Component {
 
   //  渲染城市列表
   [cityList] = () => {
+    const {onSelect} = this.props;
     let { cityData } = this.state;
     return <ul className="city-scope-list">
       {
@@ -31,7 +32,7 @@ class CityPicker extends Component {
             <ul className="city-list">
               {
                 list.citys.map((item, j) => {
-                  return <li key={j} className="city-item" onClick={() => { this.props.onSelect(item.name) }}>
+                  return <li key={j} className="city-item" onClick={() => { typeof onSelect === 'function' &&  onSelect(item.name) }}>
                     <p className="text">{item.name}</p>
                   </li>
                 })
